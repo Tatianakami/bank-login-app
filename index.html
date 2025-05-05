@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Banco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cobrinha"></div>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            
+            <!-- Campo de senha modificado -->
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Senha" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+
+            <button type="submit">Entrar</button>
+
+            <div class="captcha-box">
+                <input type="checkbox" id="captcha" required>
+                <label for="captcha">Não sou um robô</label>
+            </div>
+        </form>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <div class="login-links">
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            <a href="#" class="new-user">Criar novo usuário</a>
+            <button id="limparDadosBtn">Limpar Dados</button>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script>
+        if (checkAuth(false)) {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>

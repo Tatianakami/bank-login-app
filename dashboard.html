@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cobrinha"></div>
+    <div class="container">
+        <h2>Bem-vindo ao Dashboard!</h2>
+        <p>Login efetuado com sucesso.</p>
+
+        <!-- Botão de logout -->
+        <button id="logoutButton">Logout</button>
+    </div>
+
+    <script>
+        // Verificação com timeout para evitar loop
+        setTimeout(() => {
+            if (!localStorage.getItem("authToken")) {
+                window.location.href = "index.html";
+            }
+        }, 100);
+    
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            localStorage.removeItem("authToken");
+            window.location.href = "index.html";
+        });
+    </script>
+
+<script src="auth.js"></script>
+<script>
+    // Verifica autenticação
+    checkAuth();
+    
+    document.getElementById("logoutButton").addEventListener("click", logout);
+</script>
+</body>
+</html>
