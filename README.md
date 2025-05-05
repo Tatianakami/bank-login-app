@@ -1,4 +1,4 @@
-# Login - Banco
+Bank-login-app
 
 
 Este projeto simula um processo de autenticação simples, em que o usuário pode fazer login em um banco fictício. A aplicação é composta por uma tela de login, um sistema de autenticação utilizando armazenamento local e um dashboard de boas-vindas para usuários autenticados. O design moderno utiliza animações e efeitos interativos para uma experiência visual imersiva.
